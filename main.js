@@ -1,5 +1,6 @@
 const cors = require("cors");
 const express = require("express");
+require('dotenv').config()
 const app = express();
 const { MongoClient, ObjectId } = require("mongodb");
 const URI =
@@ -80,5 +81,5 @@ app.delete("/products/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("Application running on port 3000");
+    console.log("Application running on port "+ port);
 });
