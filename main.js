@@ -5,7 +5,7 @@ const { MongoClient, ObjectId } = require("mongodb");
 const URI =
     "mongodb+srv://saipavananand08:test123@cluster0.sa0hhhv.mongodb.net/";
 const client = new MongoClient(URI);
-const port = process.env.port || 3000;
+const port = process.env.port;
 async function connectToDB() {
     try {
         await client.connect();
