@@ -5,7 +5,7 @@ const { MongoClient, ObjectId } = require("mongodb");
 const URI =
     "mongodb+srv://saipavananand08:test123@cluster0.sa0hhhv.mongodb.net/";
 const client = new MongoClient(URI);
-
+const port = process.env.port || 3000;
 async function connectToDB() {
     try {
         await client.connect();
@@ -79,6 +79,6 @@ app.delete("/products/:id", (req, res) => {
     }
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Application running on port 3000");
 });
